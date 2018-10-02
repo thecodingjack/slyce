@@ -109,7 +109,7 @@ export default class App extends React.Component{
     let words = s.split(/(\s+|'|"|;)/)
     let quote = false
     return (
-      <div className="line">
+      <div key={s.length} className="line">
         {words.map(word => this.renderWord(word, quote, (isQuote) => {
           if(isQuote) quote = !quote
         }))}
@@ -121,24 +121,24 @@ export default class App extends React.Component{
     //check type of word and return highlighted type
     if(quote && !quotes.includes(w[0])){
       return (
-        <span style={{color:"orange"}}>{w}</span>
+        <span key={w} style={{color:"orange"}}>{w}</span>
       )
     }else if(keywords[w]){
       return (
-        <span style={{color:"#66FF66"}}>{w}</span>
+        <span key={w} style={{color:"#66FF66"}}>{w}</span>
       )
     }else if(Number(w)){
       return (
-        <span style={{color:"#3D9CD5"}}>{w}</span>
+        <span key={w} style={{color:"#3D9CD5"}}>{w}</span>
       )
     }else if(quotes.includes(w[0])){
       cb(true)
       return (
-        <span style={{color:"orange"}}>{w}</span>
+        <span key={w} style={{color:"orange"}}>{w}</span>
       )
     }else{
       return (
-        <span>{w}</span>
+        <span key={w}>{w}</span>
       )
     }
   }
@@ -159,8 +159,8 @@ export default class App extends React.Component{
         </div>
         <div className="suggestion-container">
           <div className="title">Suggestion</div>
-          {this.state.suggestions.map(suggestion=>(
-            <div className="suggestion" onClick={()=>this.typeAhead(suggestion)}>{suggestion}</div>
+          {this.state.suggestions.map((suggestion,idx)=>(
+            <div key={idx} className="suggestion" onClick={()=>this.typeAhead(suggestion)}>{suggestion}</div>
           ))}
         </div>
       </div>
