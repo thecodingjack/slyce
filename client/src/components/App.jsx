@@ -125,11 +125,11 @@ export default class App extends React.Component{
       )
     }else if(keywords[w]){
       return (
-        <span style={{color:"green"}}>{w}</span>
+        <span style={{color:"#66FF66"}}>{w}</span>
       )
     }else if(Number(w)){
       return (
-        <span style={{color:"blue"}}>{w}</span>
+        <span style={{color:"#3D9CD5"}}>{w}</span>
       )
     }else if(quotes.includes(w[0])){
       cb(true)

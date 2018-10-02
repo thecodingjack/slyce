@@ -5,7 +5,8 @@
 }
 
 .header{
-  font-size: 40px;
+  font-size: 36px;
+  color: #3CA6ED;
   font-weight: bold;
   margin: 8px 0;
   padding: 8px 0;
@@ -14,7 +15,7 @@
 
 .title{
   font-size: 24px;
-  font-weight: bold;
+  color: #454545;
   margin-top: 8px;
   padding: 8px;
 }
@@ -45,7 +46,7 @@
 }
 
 .right{
-  background-color: black; 
+  background-color:rgb(14, 22, 40);
   color: white; 
   white-space: pre; 
   overflow-x: scroll; 
@@ -55,11 +56,12 @@
 .suggestion-container{
   min-height: 25vh;
   overflow-y: scroll;
+  background-color: rgb(244, 243, 243);
 }
 
 .suggestion{
   padding: 2px 8px;
-  color: blue;
+  color: #3CA6ED;
   cursor: pointer;
 }
 
